@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Indicator</title>
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+  crossorigin="anonymous" />
+  
+</head>
+
+<body>
+  <header>
+    <h2>4F</h2>
+    <div class="openbtn"><span></span><span></span><span></span></div>
+    <nav id="g-nav">
+      
+        <ul>
+          <li><a href="index.html">2F</a></li>
+          <li><a href="index2.html">3F</a></li>
+          <li><a href="index3.html">4F</a></li>
+          <li><a href="index4.html">5F</a></li>
+        </ul>
+    </nav>
+    <nav class="gnav">
+      <div class="btn-box">
+        <a href="#" id="401" class="btn_02">401</a>
+        <a href="#" id="402" class="btn_02">402</a>
+        <a href="#" id="403" class="btn_02">403</a>
+        <a href="#" id="404" class="btn_02">404</a>
+        <a href="#" id="405" class="btn_02">405</a>
+        <a href="#" id="406" class="btn_02">406</a>
+        <a href="#" id="407" class="btn_02">407</a>
+        <a href="#" id="408" class="btn_02">408</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="floorBox">
+      <img id="floorMap" src="img/BH_4F.png" alt="">
+
+      <div id="section401"><img class="hideMapA" src="img/b01.png" alt="">
+      </div>
+      <div id="section402"><img class="hideMapB" src="img/b02.png" alt="">
+      </div>
+      <div id="section403"><img class="hideMapC" src="img/b03.png" alt="">
+      </div>
+      <div id="section404"><img class="hideMapD" src="img/b02.png" alt="">
+      </div>
+      <div id="section405"><img class="hideMapE" src="img/b03.png" alt="">
+      </div>
+      <div id="section406"><img class="hideMapF" src="img/b04.png" alt="">
+      </div>
+      <div id="section407"><img class="hideMapG" src="img/b05.png" alt="">
+      </div>
+      <div id="section408"><img class="hideMapH" src="img/b06.png" alt="">
+      </div>
+    </div>
+
+    <div id="button">
+      <a id="save" href="#" class="btn_02">SAVE</a>
+      <a id="clear" href="#" class="btn_02">CLEAR</a>
+      <a id="reload" href="#" class="btn_02">RELOAD</a>
+
+    </div>
+
+  </main>
+<footer>
+  <button class="add" id="add">
+    <i class="fas fa-plus"></i> Add
+  </button>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.2.2/marked.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+  // 部屋情報を受け取る
+    var roomFour = [];
+    
+    // Humberger
+      $(".openbtn").click(function () {//ボタンがクリックされたら
+        $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
+        $("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+      });
+
+      $("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
+        $(".openbtn").removeClass('active');//ボタンの activeクラスを除去し
+        $("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+      });
+
+  // ページ遷移
+  $('#up').click(function () {
+    location.href = 'index4.html';
+  })
+
+  $('#down').click(function () {
+    location.href = 'index2.html';
+  })
+
+    // クリックで画像を表示し配列roomFourへpush
+    $('#section401').toggle();
+    $(function () {
+      $("#401").click(function () {
+        $("#section401").toggle();
+        roomFour.push('401');
+        console.log(roomFour);
+      });
+    });
+
+    $("#section402").toggle();
+    $(function () {
+      $("#402").click(function () {
+        $("#section402").toggle();
+        roomFour.push('402');
+        console.log(roomFour);
+      });
+    });
+
+    $("#section403").toggle();
+    $(function () {
+      $("#403").click(function () {
+        $("#section403").toggle();
+        roomFour.push('403');
+        console.log(roomFour);
+      });
+    });
+
+    $("#section404").toggle();
+    $(function () {
+      $("#404").click(function () {
+        $("#section404").toggle();
+        roomFour.push('404');
+        console.log(roomFour);
+      });
+    });
+
+
+    $("#section405").toggle();
+    $(function () {
+      $("#405").click(function () {
+        $("#section405").toggle();
+        roomFour.push('405');
+        console.log(roomFour);
+      });
+    });
+
+    $("#section406").toggle();
+      $(function () {
+        $("#406").click(function () {
+          $("#section406").toggle();
+          roomFour.push('406');
+          console.log(roomFour);
+        });
+      });
+
+      $("#section407").toggle();
+        $(function () {
+          $("#407").click(function () {
+            $("#section407").toggle();
+            roomFour.push('407');
+            console.log(roomFour);
+          });
+        });
+
+        $("#section408").toggle();
+          $(function () {
+            $("#408").click(function () {
+              $("#section408").toggle();
+              roomFour.push('408');
+              console.log(roomFour);
+            });
+          });
+
+    //1.Save クリックイベント
+    $('#save').on('click', function () {
+      localStorage.setItem('roomFour', roomFour);
+    });
+
+
+    //2.clear クリックイベント
+    $('#clear').on('click', function () {
+      $('.hideMapA').hide();
+      $('.hideMapB').hide();
+      $('.hideMapC').hide();
+      $('.hideMapD').hide();
+      $('.hideMapE').hide();
+      $('.hideMapF').hide();
+      $('.hideMapG').hide();
+      $('.hideMapH').hide();
+      localStorage.removeItem('roomFour');
+    });
+
+  
+    // Point: 「.val()」は()に何か入れると入れた値で上書きする!
+    // 空の文字列で上書き
+    //3.ページ読み込み：保存データ取得表示
+    if (localStorage.getItem('roomFour')) { // 値が保存されていれば 
+      const text = localStorage.getItem('roomFour'); // データを取得
+      var result11 = text.includes('401');
+      if (result11 == true) {
+        console.log(result11)
+        $("#section401").show();
+      };
+      var result12 = text.includes('402');
+      if (result12 == true) {
+        console.log(result12)
+        $("#section402").show();
+      };
+      var result13 = text.includes('403');
+      if (result13 == true) {
+        console.log(result13)
+        $("#section403").show();
+      };
+      var result14 = text.includes('404');
+      if (result14 == true) {
+        console.log(result14)
+        $("#section404").show();
+      };
+      var result15 = text.includes('405');
+      if (result15 == true) {
+        console.log(result15)
+        $("#section405").show();
+      };
+      var result16 = text.includes('406');
+      if (result16 == true) {
+        console.log(result16)
+        $("#section406").show();
+      };
+      var result17 = text.includes('407');
+      if (result17 == true) {
+        console.log(result17)
+        $("#section407").show();
+      };
+      var result18 = text.includes('408');
+      if (result18 == true) {
+        console.log(result18)
+        $("#section408").show();
+      };
+    };
+
+    // リロード
+    $('#reload').click(function () {
+        location.reload();
+      });
+
+      // memo
+        // 要素を取得する
+        const addBtn = document.getElementById('add')
+
+        // ローカルストレージからデータを取得する
+        const notes = JSON.parse(localStorage.getItem('notes'))
+
+        // メモ帳追加処理を実行
+        if (notes) {
+          notes.forEach(note => addNewNote(note))
+        }
+
+        // 作成ボタンのクリックイベントの登録
+        addBtn.addEventListener('click', () => addNewNote())
+
+        function addNewNote(text = '') {
+          // div要素を作成
+          const note = document.createElement('div')
+          // noteクラスを追加
+          note.classList.add('note')
+
+          // メモ帳を追加
+          note.innerHTML = `
+    <div class="tools">
+        <button class="edit"><i class="fas fa-edit"></i></button>
+        <button class="delete"><i class="fas fa-trash-alt"></i></button>
+    </div>
+    <div class="main ${text ? "" : "hidden"}"></div>
+    <textarea class="${text ? "hidden" : ""}"></textarea>
+    `
+
+          // 操作に必要な要素を取得
+          const editBtn = note.querySelector('.edit')
+          const deleteBtn = note.querySelector('.delete')
+          const main = note.querySelector('.main')
+          const textArea = note.querySelector('textarea')
+
+          // テキストエリアに引数で渡したテキストを代入
+          // 新規/編集があるのでこうしている
+          textArea.value = text
+          // markedは、HTMLに追加したプラグイン
+          main.innerHTML = marked(text)
+
+          // 削除のクリックイベントの登録
+          deleteBtn.addEventListener('click', () => {
+            deleteNote(note)
+          })
+
+          // 編集ボタンのクリックイベント
+          editBtn.addEventListener('click', () => {
+            editNote(main, textArea)
+          })
+
+          // テキストエリアのイベント
+          textArea.addEventListener('input', (e) => {
+            const { value } = e.target
+
+            main.innerHTML = marked(value)
+
+            // ローカルストレージの更新
+            updateLS()
+          })
+
+          // bodyの子要素として追加
+          document.body.appendChild(note)
+        }
+
+        // ローカルストレージにメモ帳を保存
+        function updateLS() {
+          // 要素を取得
+          const notesText = document.querySelectorAll('textarea')
+
+          const notes = []
+
+          // 要素を格納
+          notesText.forEach(note => notes.push(note.value))
+
+          // notesという名前でローカルストレージを保存
+          localStorage.setItem('notes', JSON.stringify(notes))
+        }
+
+        // メモ帳削除
+        function deleteNote(note) {
+          // ノートを削除
+          note.remove()
+
+          // ローカルストレージの更新
+          updateLS()
+        }
+
+        // メモ帳編集
+        function editNote(main, textArea) {
+          // hiddenがついているものは消し、ついてないものは付与する
+          main.classList.toggle('hidden')
+          textArea.classList.toggle('hidden')
+        }
+  </script>
+
+</body>
+
+</html>
